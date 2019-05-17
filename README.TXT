@@ -12,20 +12,40 @@ Databases: MySQL username 'gregory.swedeen' password 'KFDP5DAP'
            MongoDB is run locally and does not require any login credentials
            
 Setup:
-    Once you have changed directories into the AdvWebDev folder, please run the launch.sh bash script, or run these commands:
-        First run: 
+    Once you have changed directories into the AdvWebDev folder, please run these commands:
 
-            mongod
-            mongo
-
-        This will start running the mongoDB server
-
-        Secondly run: 
+        Start Environment:
 
             source ./env/bin/activate
+
+
+        Install Python 3.6: 
+            sudo apt-get install python3.6 
+            alias python3='/usr/bin/python3.6' 
+
+            My account is not one of the approved sudo-ers so I am unable to set version to Python3.6
+            If Python3.6 is not installed to '/usr/bin/python3.6', run 'whereis Python3.6'
+
+        Install Requirements:
+
+            sudo apt install python3-pip
+            pip install -r requirements.txt
+
+            Again, without Python 3.6 the requirements will not be able to be installed
+            Pip3 must be used, this will become available once Python3.6 is installed
+
+        Start Mongo:
+            
+            mongod 
+            mongo 
+
+            This will start the mongo server, an additional terminal may need to be opened to continue as this will bring you to the mongo shell.
+
+        Start Server:
+
             flask run
         
-        This will start the web server
+            This will start the web server
 
 Usage(functions in order):
 
