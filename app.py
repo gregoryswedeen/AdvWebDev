@@ -330,6 +330,6 @@ def displayTweets():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host='cs2s.yorkdc.net', port=5018,debug=True)
 	# host='cs2s.yorkdc.net', port=5018
  
