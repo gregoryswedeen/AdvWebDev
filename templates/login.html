@@ -1,0 +1,21 @@
+{% extends 'startPage.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block login %}
+    <h1>Login</h1>
+    <div>
+        <form class="form-horizontal" action="/login/" method="POST" role='form' name='form'>
+            {{ form.csrf_token }}
+            <d1>
+                {{ form.csrf_token}}
+                {{wtf.form_field(form.userName)}}
+                {{wtf.form_field(form.password)}}
+                {{wtf.form_field(form.submit)}}
+            </d1>
+        </form>
+    </div>
+    <div>
+        <p> If you do not have an account click below </p>
+        <a href="/inputUser" class="btn btn-info" role="button">Create Account</a>
+    </div>
+{% endblock%}

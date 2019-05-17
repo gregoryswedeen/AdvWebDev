@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block tweets %}
+    <div class="panel panel-primary">
+      <div class="panel-heading">Top 5 Trends On Twitter In Your Area</div>
+      <div class="panel-body">
+        {% for trend in trends %} 
+          <li>{{trend['name']}}</li> 
+          <br>
+        {% endfor %} 
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Tweets In Your Area</div>
+      <div class="panel-body">
+        {% for tweet in tweets %} 
+          <li>{{tweet['created_at']}}: {{tweet['text']}}</li> 
+          <br>
+        {% endfor %} 
+      </div>
+    </div>
+{% endblock %}
+

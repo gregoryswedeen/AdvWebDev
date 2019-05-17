@@ -1,0 +1,14 @@
+{% extends 'startPage.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block userCreation %}
+    <h1>Create Account</h1>
+    <form  action="/inputUser" method="POST" role="form">
+        {{ form.csrf}}
+        <div class="form-group">
+            {{wtf.form_field(form.userName)}}
+            {{wtf.form_field(form.password)}}
+            {{wtf.form_field(form.submit)}}
+            {{ form.csrf_token}}
+        </div>												   
+    </form>
+{% endblock%}

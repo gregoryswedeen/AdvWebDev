@@ -1,0 +1,75 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1>Whats Up The Road? </h1>
+    <p> Current User: {{ user }} </p>
+    <p> Start Location: {{ start }} </p>
+    <p> Destination: {{ stop }} </p>
+  </div>
+  <div class='container-fluid'>
+    <div class='container-max-width'>
+      <div class='row'>
+        <div class="col-lg-3">
+          <a class="btn btn-primary btn-block" href="/startLocation" role="button">Enter Start Location</a>
+        </div>
+        <div class="col-lg-3">
+          <a class="btn btn-primary btn-block" href="/destination" role="button">Enter Destination</a>
+        </div>
+        <div class="col-lg-2">
+          <a class="btn btn-primary btn-block" href="/tweets/" role="button">Local Tweets</a>
+        </div>
+        <div class="col-lg-2">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">View Maps
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="/renderMap">Traffic Map</a></li>
+            <li><a href="/directionMap">Directions Map</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-1">
+          <a class="btn btn-primary btn-block" href="/logout" role="button">Logout</a>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-lg-3'>
+          {% block locationForm %}
+          {% endblock %}
+        </div>
+        <div class='col-lg-3'>
+          {% block destinationForm %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class='container-fluid'>
+    <div class='container-max-width'>
+      <div class='row'>
+        <div class='col-lg-1'>
+        </div>
+        <div class='col-lg-10'>
+          {% block map %}
+          {% endblock %}
+          {% block directionMap %}
+          {% endblock %}
+          {% block weatherMap %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='container-fluid'>
+    <div class='container-max-width'>
+      <div class='row'>
+          {% block tweets %}
+          {% endblock %}
+      </div>
+    </div>
+  </div>
+    
+{% endblock %}
+
