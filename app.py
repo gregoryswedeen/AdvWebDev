@@ -129,7 +129,7 @@ def page():
 		CurrentUser = 'Please Log In'
 		startLocation = 'Please Enter Location'
 		stopLocation = 'Please Enter Destination'
-		print('worked')
+		
 	else:
 		CurrentUser = user.find()[0]['user']
 		startLocation = locations.find()[0]['start']
@@ -263,14 +263,14 @@ def login():
 				print(data[1])
 				print(data[2])
 				if data[1] == userName and data[2] == password:
-					user.remove({})
-					tweets.remove({})
-					locations.remove({})
-					Trends.remove({})
-					currentUser = {
-						'user': userName
-					}
-					user.insert_one(currentUser)
+					# user.remove({})
+					# tweets.remove({})
+					# locations.remove({})
+					# Trends.remove({})
+					# currentUser = {
+					# 	'user': userName
+					# }
+					# user.insert_one(currentUser)
 					return redirect('/page')
 				else:
 					flash('incorrect credentials')
