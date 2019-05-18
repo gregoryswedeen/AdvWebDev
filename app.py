@@ -256,7 +256,7 @@ def login():
 				password = form.password.data
 				print(userName, password)
 				cursor = connection.cursor()
-				sql = "SELECT *, CONVERT(* USING utf8) FROM User WHERE username=%s"
+				sql = "SELECT * FROM User WHERE username=%s"
 				cursor.execute(sql, userName)
 				data = cursor.fetchone()
 				print(data)
