@@ -254,11 +254,13 @@ def login():
 			if form.validate_on_submit():
 				userName = form.userName.data
 				password = form.password.data
+				print(userName,password)
 				cursor = connection.cursor()
 				sql = "SELECT * FROM User WHERE username=%s"
 				cursor.execute(sql, userName)
 				print(cursor)
 				data = cursor.fetchone()
+				print(data)
 				if data[1] == userName and data[2] == password:
 					user.remove({})
 					tweets.remove({})
@@ -268,14 +270,18 @@ def login():
 						'user': userName
 					}
 					user.insert_one(currentUser)
+					print('cat')
 					return redirect('/page')
 				else:
+					print('dog')
 					flash('incorrect credentials')
 					return redirect('/login')
 			else:
+				print('kittens')
 				flash('incorrect credentials')
 				return redirect('/login')
 		except:
+			print('puppies')
 			flash('incorrect credentials')
 			return redirect('/login')
 
