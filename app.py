@@ -25,7 +25,7 @@ from wtforms.validators import DataRequired, Length
 # Initialize the MongoDB client
 ENDPOINT = "mongodb://cs2s:27017/?authSource=gregoryswedeen&gssapiServiceName=mongodb"
 PORT = 27017
-client = MongoClient(ENDPOINT, PORT) 
+client = MongoClient(ENDPOINT, PORT, username='gregory.swedeen', password='TN4H4SFJ',) 
 #Select the Database
 db = client.testDatabase  
 # Collections

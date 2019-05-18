@@ -15,7 +15,7 @@ access_token_secret = "47e4qFZAjcL0UK7rYDj1Os5ZSmShbNdVhHBtkEos4oART"
 # Initialize the Cosmos client
 ENDPOINT = "mongodb://cs2s:27017/?authSource=gregoryswedeen&gssapiServiceName=mongodb"
 PORT = 27017
-client = MongoClient(ENDPOINT, PORT) 
+client = MongoClient(ENDPOINT, PORT, username='gregory.swedeen', password='TN4H4SFJ',) 
 
 #Select the database
 db = client.testDatabase   
