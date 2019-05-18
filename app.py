@@ -254,12 +254,14 @@ def login():
 			if form.validate_on_submit():
 				userName = form.userName.data.encode('latin1')
 				password = form.password.data.encode('latin1')
-				print(userName, password)
+				print(userName)
+				print(password)
 				cursor = connection.cursor()
 				sql = "SELECT * FROM User WHERE username=%s"
 				cursor.execute(sql, userName)
 				data = cursor.fetchone()
-				print(data)
+				print(data[1])
+				print(data[2])
 				if data[1] == userName and data[2] == password:
 					user.remove({})
 					tweets.remove({})
