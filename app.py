@@ -55,7 +55,7 @@ class userForm(FlaskForm):
 # default route, making the user login
 @app.route('/')
 def defaultRoute():
-	return redirect('/page')
+	return redirect('/login')
 
 # Get the distance and time to destination based on input
 def getDistanceStats():
