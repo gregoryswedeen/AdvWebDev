@@ -23,7 +23,7 @@ from wtforms import StringField, SubmitField, validators, SelectField, PasswordF
 from wtforms.validators import DataRequired, Length
 
 # Initialize the MongoDB client
-ENDPOINT = "mongodb://127.0.0.1:27017"
+ENDPOINT = "mongodb://cs2s:27017/?authSource=gregoryswedeen&gssapiServiceName=mongodb"
 PORT = 27017
 client = MongoClient(ENDPOINT, PORT) 
 #Select the Database
@@ -263,14 +263,14 @@ def login():
 				print(data[1])
 				print(data[2])
 				if data[1] == userName and data[2] == password:
-					# user.remove({})
-					# tweets.remove({})
-					# locations.remove({})
-					# Trends.remove({})
-					# currentUser = {
-					# 	'user': userName
-					# }
-					# user.insert_one(currentUser)
+					user.remove({})
+					tweets.remove({})
+					locations.remove({})
+					Trends.remove({})
+					currentUser = {
+						'user': userName
+					}
+					user.insert_one(currentUser)
 					return redirect('/page')
 				else:
 					flash('incorrect credentials')
@@ -341,3 +341,4 @@ def displayTweets():
 if __name__ == '__main__':
 	app.run(host='cs2s.yorkdc.net', port=5018,debug=True)
 	# host='cs2s.yorkdc.net', port=5018
+
