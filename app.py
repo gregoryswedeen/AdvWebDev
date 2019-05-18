@@ -254,23 +254,19 @@ def login():
 			if form.validate_on_submit():
 				userName = form.userName.data.encode('latin1')
 				password = form.password.data.encode('latin1')
-				print(userName)
-				print(password)
 				cursor = connection.cursor()
 				sql = "SELECT * FROM User WHERE username=%s"
 				cursor.execute(sql, userName)
 				data = cursor.fetchone()
-				print(data[1])
-				print(data[2])
 				if data[1] == userName and data[2] == password:
-					# user.remove({})
-					# tweets.remove({})
-					# locations.remove({})
-					# Trends.remove({})
-					# currentUser = {
-					# 	'user': userName
-					# }
-					# user.insert_one(currentUser)
+					user.remove({})
+					tweets.remove({})
+					locations.remove({})
+					Trends.remove({})
+					currentUser = {
+						'user': userName
+					}
+					user.insert_one(currentUser)
 					return redirect('/page')
 				else:
 					flash('incorrect credentials')
