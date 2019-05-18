@@ -259,7 +259,7 @@ def login():
 				cursor.execute(sql, userName)
 				print(cursor)
 				data = cursor.fetchone()
-				if data[1] == userName and data[2] == password:
+				if 'greg' == userName and 'greg' == password:
 					user.remove({})
 					tweets.remove({})
 					locations.remove({})
