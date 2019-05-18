@@ -263,14 +263,14 @@ def login():
 				print(data[1])
 				print(data[2])
 				if data[1] == userName and data[2] == password:
-					user.remove({})
-					tweets.remove({})
-					locations.remove({})
-					Trends.remove({})
-					currentUser = {
-						'user': userName
-					}
-					user.insert_one(currentUser)
+					# user.remove({})
+					# tweets.remove({})
+					# locations.remove({})
+					# Trends.remove({})
+					# currentUser = {
+					# 	'user': userName
+					# }
+					# user.insert_one(currentUser)
 					return redirect('/page')
 				else:
 					flash('incorrect credentials')
