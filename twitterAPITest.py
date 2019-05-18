@@ -18,7 +18,7 @@ PORT = 27017
 client = MongoClient(ENDPOINT, PORT, username='gregory.swedeen', password='TN4H4SFJ',) 
 
 #Select the database
-db = client.testDatabase   
+db = client.gregoryswedeen   
 # Collections 
 Trends = db.Trends
 tweets = db.tweets

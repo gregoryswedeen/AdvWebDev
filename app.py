@@ -27,7 +27,7 @@ ENDPOINT = "mongodb://cs2s:27017/?authSource=gregoryswedeen&gssapiServiceName=mo
 PORT = 27017
 client = MongoClient(ENDPOINT, PORT, username='gregory.swedeen', password='TN4H4SFJ',) 
 #Select the Database
-db = client.testDatabase  
+db = client.gregoryswedeen 
 # Collections
 tweets = db.tweets
 user = db.user
