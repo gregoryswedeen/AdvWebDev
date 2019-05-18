@@ -5,6 +5,10 @@
 #fix traffic map 
 
 # Necessary Packages to import
+
+stringofpath = '/home/gregory.swedeen/htdocs/AdvWebDev/env/lib/python3.6/site-packages'
+import sys
+sys.path.append(stringofpath)
 import twitterAPITest
 import googlemaps
 from datetime import datetime
@@ -253,6 +257,7 @@ def login():
 				cursor = connection.cursor()
 				sql = "SELECT * FROM User WHERE username=%s"
 				cursor.execute(sql, userName)
+				print(cursor)
 				data = cursor.fetchone()
 				if data[1] == userName and data[2] == password:
 					user.remove({})
