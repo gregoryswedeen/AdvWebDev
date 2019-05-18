@@ -252,8 +252,8 @@ def login():
 		try:
 			form = userForm()
 			if form.validate_on_submit():
-				userName = form.userName.data
-				password = form.password.data
+				userName = form.userName.data.encode('latin1')
+				password = form.password.data.encode('latin1')
 				print(userName, password)
 				cursor = connection.cursor()
 				sql = "SELECT * FROM User WHERE username=%s"
