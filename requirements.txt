@@ -60,7 +60,7 @@ protobuf==3.7.1
 ptvsd==4.2.8
 ptyprocess==0.6.0
 pydocumentdb==2.3.3
-Pygments==2.3.1
+Pygments==2.7.4
 pymongo==3.7.2
 PyMySQL==0.9.3
 pyparsing==2.4.0
